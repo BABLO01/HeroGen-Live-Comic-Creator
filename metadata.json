@@ -1,0 +1,8 @@
+{
+  "name": "HeroGen: Live Comic Creator",
+  "description": "Turn yourself into a superhero in a 10-page animated comic book. Features real-time voice collaboration with Gemini Live API.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}

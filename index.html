@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeroGen: Live Comic Creator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom font classes since we can't use external CSS files comfortably for everything */
+      .font-comic-title { font-family: 'Bangers', system-ui; letter-spacing: 0.05em; }
+      .font-comic-text { font-family: 'Comic Neue', cursive; }
+      
+      /* 3D Transform Utilities */
+      .perspective-1000 { perspective: 1000px; }
+      .transform-style-3d { transform-style: preserve-3d; }
+      .backface-hidden { backface-visibility: hidden; }
+      .rotate-y-180 { transform: rotateY(180deg); }
+      
+      /* Custom scrollbar for comic feel */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #1a1a1a; }
+      ::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 4px; }
+      
+      /* Animation classes */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float { animation: float 3s ease-in-out infinite; }
+      
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.5); }
+        50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.8); }
+      }
+      .animate-pulse-glow { animation: pulse-glow 2s infinite; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-zinc-950 text-white font-sans antialiased overflow-x-hidden selection:bg-red-500 selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
